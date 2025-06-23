@@ -1,0 +1,260 @@
+[
+  {
+    "alert": {
+      "timestamp": "2025-04-26T00:16:19.519755+0000",
+      "src_ip": "92.118.39.61",
+      "src_port": 4455,
+      "dest_ip": "192.168.1.108",
+      "dest_port": 80,
+      "proto": "TCP",
+      "signature": "ET DROP Spamhaus DROP Listed Traffic Inbound group 13",
+      "severity": 2,
+      "action": "allowed"
+    },
+    "interpretation": "Un système externe (adresse IP 92.118.39.61) a tenté de se connecter à ton appareil (192.168.1.108) sur le port 80 (utilisé généralement pour des services web). Cette adresse IP est connue comme malveillante et est listée par Spamhaus, une organisation spécialisée dans la lutte contre le spam et les cyberattaques. Cela signifie que cette IP a déjà été utilisée pour des activités dangereuses (piratage, virus, spam). L’alerte a été détectée mais pas bloquée, donc la tentative de connexion a été autorisée."
+  },
+  {
+    "alert": {
+      "timestamp": "2025-04-26T00:16:19.519755+0000",
+      "src_ip": "92.118.39.61",
+      "src_port": 4455,
+      "dest_ip": "192.168.1.108",
+      "dest_port": 80,
+      "proto": "TCP",
+      "signature": "ET COMPROMISED Known Compromised or Hostile Host Traffic group 16",
+      "severity": 2,
+      "action": "allowed"
+    },
+    "interpretation": "Cette alerte indique qu’une machine avec l’IP 92.118.39.61 — connue comme infectée ou contrôlée par des attaquants — a tenté de se connecter à ton système. Elle fait partie d’un groupe d’adresses identifiées comme dangereuses par les experts en cybersécurité (source : Emerging Threats). L’alerte a été détectée mais pas bloquée, la tentative est donc passée sans interruption, même si suspecte."
+  },
+  {
+    "alert": {
+      "timestamp": "2025-04-26T01:30:51.678360+0000",
+      "src_ip": "104.234.115.89",
+      "src_port": 4443,
+      "dest_ip": "192.168.1.108",
+      "dest_port": 80,
+      "proto": "TCP",
+      "signature": "ET DROP Dshield Block Listed Source group 1",
+      "severity": 2,
+      "action": "allowed"
+    },
+    "interpretation": "Une machine sur Internet, avec l’adresse IP 104.234.115.89, a tenté de se connecter à ton appareil local (192.168.1.108) sur le port 80, utilisé généralement pour les sites web (HTTP). Cette IP est connue comme dangereuse : elle fait partie de la liste noire DShield, une base de données d’adresses IP utilisées dans des attaques ou comportements malveillants. Ton système a repéré cette tentative, mais la connexion a été autorisée."
+  },
+  {
+    "alert": {
+      "timestamp": "2021-01-02T06:44:09.398Z",
+      "src_ip": "172.16.23.1",
+      "src_port": 57621,
+      "dest_ip": "172.16.23.255",
+      "dest_port": 57621,
+      "proto": "UDP",
+      "signature": "ET POLICY Spotify P2P Client",
+      "severity": 3,
+      "action": "allowed"
+    },
+    "interpretation": "Une machine sur ton réseau local (IP 172.16.23.1) a envoyé des données en UDP vers l’adresse de diffusion locale (172.16.23.255). Cette communication est liée à l’utilisation du client P2P de Spotify. Le système de sécurité a détecté cela, mais considère ce trafic comme non suspect."
+  },
+  {
+    "alert": {
+      "timestamp": "2017-03-24T17:22:18.763993-0600",
+      "flow_id": 2041465235090146,
+      "event_type": "alert",
+      "src_ip": "10.192.88.98",
+      "src_port": 56782,
+      "dest_ip": "173.194.203.125",
+      "dest_port": 5222,
+      "proto": "TCP",
+      "action": "allowed",
+      "gid": 1,
+      "signature_id": 2002327,
+      "rev": 4,
+      "signature": "ET CHAT Google Talk (Jabber) Client Login",
+      "category": "Potential Corporate Privacy Violation",
+      "severity": 1
+    },
+    "app_proto": "failed",
+    "flow": {
+      "pkts_toserver": 28,
+      "pkts_toclient": 26,
+      "bytes_toserver": 4023,
+      "bytes_toclient": 6760,
+      "start": "2017-03-24T17:22:16.961250-0600"
+    },
+    "interpretation": "Une machine locale (IP 10.192.88.98) a essayé de se connecter à un serveur Google Talk (adresse 173.194.203.125) sur le port 5222, utilisé pour la messagerie instantanée Jabber. Cette connexion a été autorisée. L’alerte signale une possible violation de la confidentialité d’entreprise, mais la sévérité est faible."
+  },
+  {
+    "alert": {
+      "timestamp": "2017-03-25T16:13:48.888290-0600",
+      "flow_id": 1006297602043853,
+      "pcap_cnt": 759052,
+      "event_type": "alert",
+      "src_ip": "10.192.0.226",
+      "src_port": 51487,
+      "dest_ip": "176.98.8.113",
+      "dest_port": 51413,
+      "proto": "UDP",
+      "action": "allowed",
+      "gid": 1,
+      "signature_id": 2008585,
+      "rev": 4,
+      "signature": "ET P2P BitTorrent DHT announce_peers request",
+      "category": "Potential Corporate Privacy Violation",
+      "severity": 1
+    },
+    "app_proto": "failed",
+    "flow": {
+      "pkts_toserver": 425,
+      "pkts_toclient": 255,
+      "bytes_toserver": 590326,
+      "bytes_toclient": 19053,
+      "start": "2017-03-25T16:11:39.569293-0600"
+    },
+    "interpretation": "Une machine locale (10.192.0.226) a envoyé une demande DHT BitTorrent via UDP à une adresse externe (176.98.8.113). Cela indique une activité de partage de fichiers en peer-to-peer. L’action a été autorisée. Ce type de trafic peut poser un risque pour la confidentialité en entreprise, mais la sévérité est faible."
+  },
+  {
+    "alert": {
+      "timestamp": "2017-03-24T18:20:18.668789-0600",
+      "flow_id": 2232286565287223,
+      "pcap_cnt": 733681,
+      "event_type": "alert",
+      "src_ip": "10.192.88.98",
+      "src_port": 57410,
+      "dest_ip": "104.27.192.92",
+      "dest_port": 80,
+      "proto": "TCP",
+      "tx_id": 0,
+      "action": "allowed",
+      "gid": 1,
+      "signature_id": 2008986,
+      "rev": 7,
+      "signature": "ET POLICY IP Check Domain (whatismyip in HTTP Host)",
+      "category": "Attempted Information Leak",
+      "severity": 2
+    },
+    "http": {
+      "hostname": "www.whatismyip.com",
+      "url": "/",
+      "http_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36",
+      "http_content_type": "text/html",
+      "http_method": "GET",
+      "protocol": "HTTP/1.1",
+      "status": 301,
+      "redirect": "https://www.whatismyip.com/",
+      "length": 185
+    },
+    "app_proto": "http",
+    "flow": {
+      "pkts_toserver": 4,
+      "pkts_toclient": 3,
+      "bytes_toserver": 639,
+      "bytes_toclient": 755,
+      "start": "2017-03-24T18:20:18.443703-0600"
+    },
+    "interpretation": "Une machine locale (10.192.88.98) a accédé à www.whatismyip.com via HTTP (port 80). Ce site est utilisé pour connaître son adresse IP publique. L’accès a été autorisé. L’alerte signale une tentative possible de fuite d’informations, avec une sévérité modérée."
+  },
+  {
+    "alert": {
+      "timestamp": "2017-03-24T11:23:27.653055-0600",
+      "flow_id": 608151632555552,
+      "pcap_cnt": 249871,
+      "event_type": "alert",
+      "src_ip": "10.10.1.107",
+      "src_port": 59620,
+      "dest_ip": "37.252.248.78",
+      "dest_port": 80,
+      "proto": "TCP",
+      "tx_id": 0,
+      "action": "allowed",
+      "gid": 1,
+      "signature_id": 2009475,
+      "rev": 11,
+      "signature": "ET POLICY TeamViewer Dyngate User-Agent",
+      "category": "Potential Corporate Privacy Violation",
+      "severity": 1
+    },
+    "http": {
+      "hostname": "ping3.teamviewer.com",
+      "url": "/din.aspx?s=00000000&id=0&client=DynGate&p=10000001",
+      "http_user_agent": "Mozilla/4.0 (compatible; MSIE 6.0; DynGate)",
+      "http_method": "GET",
+      "protocol": "HTTP/1.1",
+      "length": 0
+    },
+    "app_proto": "http",
+    "flow": {
+      "pkts_toserver": 8,
+      "pkts_toclient": 1,
+      "bytes_toserver": 1286,
+      "bytes_toclient": 66,
+      "start": "2017-03-24T11:23:19.667168-0600"
+    },
+    "interpretation": "Une machine locale (10.10.1.107) a envoyé une requête HTTP à ping3.teamviewer.com avec un User-Agent spécifique à TeamViewer DynGate. L’action a été autorisée. Cela peut indiquer une utilisation de TeamViewer, ce qui pourrait poser un risque pour la confidentialité si non autorisé. Sévérité faible."
+  },
+  {
+    "alert": {
+      "timestamp": "2017-03-24T13:59:32.031095-0600",
+      "flow_id": 1761144807387959,
+      "pcap_cnt": 117118,
+      "event_type": "alert",
+      "src_ip": "10.10.2.9",
+      "src_port": 3306,
+      "dest_ip": "10.0.0.111",
+      "dest_port": 42786,
+      "proto": "TCP",
+      "action": "allowed",
+      "gid": 1,
+      "signature_id": 2010493,
+      "rev": 2,
+      "signature": "ET SCAN Non-Allowed Host Tried to Connect to MySQL Server",
+      "category": "Attempted Information Leak",
+      "severity": 2
+    },
+    "flow": {
+      "pkts_toserver": 3,
+      "pkts_toclient": 3,
+      "bytes_toserver": 206,
+      "bytes_toclient": 277,
+      "start": "2017-03-24T13:59:32.029495-0600"
+    },
+    "interpretation": "Une machine locale (10.10.2.9) a essayé de se connecter au serveur MySQL (port 3306) sur une autre machine interne (10.0.0.111) via TCP. La connexion a été autorisée, mais l’alerte indique qu’un hôte non autorisé tente d’accéder à la base de données. Ceci est considéré comme une fuite d’information possible, avec une sévérité modérée."
+  },
+  {
+    "alert": {
+      "timestamp": "2017-03-25T11:22:24.038302-0600",
+      "flow_id": 2141795623362105,
+      "pcap_cnt": 550840,
+      "event_type": "alert",
+      "src_ip": "10.10.1.166",
+      "src_port": 62956,
+      "dest_ip": "23.194.103.164",
+      "dest_port": 80,
+      "proto": "TCP",
+      "tx_id": 0,
+      "action": "allowed",
+      "gid": 1,
+      "signature_id": 2010645,
+      "rev": 8,
+      "signature": "ET POLICY User-Agent (Launcher)",
+      "category": "A Network Trojan was detected",
+      "severity": 1
+    },
+    "http": {
+      "hostname": "download.microsoft.com",
+      "url": "/download/C/F/F/CFF3A0B8-99D4-41A2-AE1A-496C08BEB904/WebPlatformInstaller_amd64_en-US.msi",
+      "http_user_agent": "WPILauncher/1.0",
+      "http_method": "GET",
+      "protocol": "HTTP/1.1",
+      "length": 0
+    },
+    "app_proto": "http",
+    "flow": {
+      "pkts_toserver": 4,
+      "pkts_toclient": 10,
+      "bytes_toserver": 482,
+      "bytes_toclient": 12238,
+      "start": "2017-03-25T11:22:23.974393-0600"
+    },
+    "interpretation": "Une machine locale (10.10.1.166) a téléchargé un fichier depuis download.microsoft.com en utilisant un User-Agent nommé \"WPILauncher/1.0\". L’action a été autorisée. Cette alerte signale un comportement lié à un possible cheval de Troie réseau, mais la sévérité est faible."
+  }
+]
