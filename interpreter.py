@@ -7,7 +7,7 @@ import requests
 
 # --------- 1. Charger les documents JSON ---------
 loader = JSONLoader(
-    file_path="C:\\Users\\Client\\alerts_dataset.json",
+    file_path="alerts_dataset.json",
     jq_schema=".[] | .alert.signature + \" : \" + .payload_printable",
     text_content=True
 )
