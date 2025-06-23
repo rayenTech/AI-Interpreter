@@ -4,3 +4,6 @@ requests
 sentence-transformers
 langchain
 faiss-cpu
+jq
+transformers
+requests
